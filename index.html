@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="map"></div>
+    <div class="search-container">
+        <div class="search">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="heading">Store Near you</div>
+            <div class="sub">Product varies store to store please contact the store directly.</div>
+            <div class="mylocation">use my current location</div>
+            <div><i class="fas fa-sort"></i></div>
+            <div class="search-zip">
+                <input type="text" placeholder="City/Zip"/>
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="result">
+            <div class="card">
+                <div class="details">
+                    <div class="primary-head"><i class="fas fa-bullhorn"></i> 6066 West Olympic Boulevard</div>
+                    <div class="address"><i class="fas fa-street-view"></i> 6th street andrews mall south west texas</div>
+                    <div class="phone"> <i class="fas fa-mobile-alt"></i> +919806441142</div>
+                    <div class="closing">open untill 7pm</div>
+                </div>
+                <div class="arrow">
+                    
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>            
+            </div>
+
+            <div class="card">
+                <div class="details">
+                    <div class="primary-head"><i class="fas fa-bullhorn"></i> 6066 West Olympic Boulevard</div>
+                    <div class="address"><i class="fas fa-street-view"></i> 6th street andrews mall south west texas</div>
+                    <div class="phone">  <i class="fas fa-mobile-alt"></i> +919806441142</div>
+                    <div class="closing">open untill 7pm</div>
+                </div>
+                <div class="arrow">
+                    
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>            
+            </div>
+            <div class="card">
+                <div class="details">
+                    <div class="primary-head"><i class="fas fa-bullhorn"></i> 6066 West Olympic Boulevard</div>
+                    <div class="address"><i class="fas fa-street-view"></i> 6th street andrews mall south west texas</div>
+                    <div class="phone">  <i class="fas fa-mobile-alt"></i> +919806441142</div>
+                    <div class="closing">open untill 7pm</div>
+                </div>
+                <div class="arrow">
+                    
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>            
+            </div>
+            <div class="card">
+                <div class="details">
+                    <div class="primary-head"><i class="fas fa-bullhorn"></i> 6066 West Olympic Boulevard</div>
+                    <div class="address"><i class="fas fa-street-view"></i> 6th street andrews mall south west texas</div>
+                    <div class="phone">  <i class="fas fa-mobile-alt"></i> +919806441142</div>
+                    <div class="closing">open untill 7pm</div>
+                </div>
+                <div class="arrow">
+                    
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>            
+            </div>
+            
+        </div>
+    </div>
+    <script>
+      function initMap() {
+      var myLatLng = {lat: 19.0760, lng: 72.8777};
+       var dombivali={lat:19.2094,lng:73.0939}
+      var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: myLatLng,
+            styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+            
+        });
+        addmarker(myLatLng)
+        addmarker(dombivali)
+        function addmarker(cords){
+            var marker = new google.maps.Marker({
+            position: cords,
+            map: map,
+            title: 'Hello World!',
+            icon:"https://img.icons8.com/officel/60/000000/marker.png"
+         });
+        }
+  
+}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh15L6ZQVrZVsMjwAhb_3-X6bbgpSGtQk&callback=initMap"
+    async defer></script>
+</body>
+</html>
